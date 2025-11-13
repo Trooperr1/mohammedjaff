@@ -24,13 +24,18 @@
       <a href="index.html" class="logo">JAFF STUDIO</a>
 
       <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-        <li><a href="contact.html#booking" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">Book Now</a></li>
+        <li><a href="index.html" class="nav-link" data-translate="nav_home">Home</a></li>
+        <li><a href="about.html" class="nav-link" data-translate="nav_about">About</a></li>
+        <li><a href="services.html" class="nav-link" data-translate="nav_services">Services</a></li>
+        <li><a href="portfolio.html" class="nav-link" data-translate="nav_portfolio">Portfolio</a></li>
+        <li><a href="pricing.html" class="nav-link" data-translate="nav_pricing">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link" data-translate="nav_contact">Contact</a></li>
+        <li class="language-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="de">DE</button>
+        </li>
+        <li><a href="contact.html#booking" class="btn btn-primary" style="padding: 0.75rem 1.5rem;" data-translate="nav_book_now">Book Now</a></li>
       </ul>
 
       <div class="nav-toggle">
@@ -119,7 +124,7 @@
             <div class="contact-icon">📧</div>
             <div>
               <h4 style="color: white; margin-bottom: 0.25rem;">Email</h4>
-              <p>contact@jaffstudio.com</p>
+              <p>contact@jaffstudio.ch</p>
             </div>
           </div>
 
@@ -127,7 +132,7 @@
             <div class="contact-icon">📱</div>
             <div>
               <h4 style="color: white; margin-bottom: 0.25rem;">Phone</h4>
-              <p>+964 XXX XXX XXXX</p>
+              <p>+41 XX XXX XX XX</p>
             </div>
           </div>
 
@@ -135,7 +140,7 @@
             <div class="contact-icon">📍</div>
             <div>
               <h4 style="color: white; margin-bottom: 0.25rem;">Address</h4>
-              <p>Kurdistan, Iraq</p>
+              <p>Switzerland</p>
             </div>
           </div>
 
@@ -143,7 +148,7 @@
             <div class="contact-icon">🕐</div>
             <div>
               <h4 style="color: white; margin-bottom: 0.25rem;">Business Hours</h4>
-              <p>Sunday - Thursday: 9:00 AM - 6:00 PM<br>Friday - Saturday: Closed</p>
+              <p>Monday - Friday: 9:00 AM - 6:00 PM (CET)<br>Saturday - Sunday: Closed</p>
             </div>
           </div>
 
@@ -170,8 +175,58 @@
         <p>Schedule a 30-minute call with our team to discuss your project</p>
       </div>
 
+      <!-- Google Calendar Integration -->
+      <div class="calendar-container animate-on-scroll" style="margin-bottom: 3rem;">
+        <div class="card" style="padding: 2rem;">
+          <h3 style="text-align: center; margin-bottom: 1.5rem; color: white;">📅 Check Our Availability</h3>
+          <p style="text-align: center; margin-bottom: 2rem; color: var(--medium-gray);">View our real-time availability and select a convenient time slot</p>
+
+          <!--
+            GOOGLE CALENDAR SETUP INSTRUCTIONS:
+
+            1. Go to Google Calendar (calendar.google.com)
+            2. Create a dedicated calendar for bookings (Settings > Add Calendar)
+            3. Go to calendar settings > "Integrate calendar"
+            4. Copy the "Embed code" or "Public URL to this calendar"
+            5. Replace the src URL below with your Google Calendar embed code
+
+            Example embed code format:
+            <iframe src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID"
+                    style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+
+            For appointment booking, consider using Google Calendar Appointment Slots or Calendly integration
+          -->
+
+          <div class="google-calendar-embed">
+            <!-- Replace this placeholder with your actual Google Calendar embed code -->
+            <div class="calendar-placeholder">
+              <div class="calendar-grid" id="calendar-widget"></div>
+            </div>
+
+            <!-- Alternative: Use iframe for Google Calendar (uncomment and add your calendar URL) -->
+            <!--
+            <iframe src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&ctz=Europe/Zurich"
+                    style="border: 0; border-radius: 12px;"
+                    width="100%"
+                    height="600"
+                    frameborder="0"
+                    scrolling="no">
+            </iframe>
+            -->
+          </div>
+
+          <div style="text-align: center; margin-top: 1.5rem;">
+            <a href="https://calendar.google.com/" target="_blank" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+              <span>📆</span>
+              <span>Open in Google Calendar</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div style="max-width: 700px; margin: 0 auto;">
         <div class="card animate-on-scroll">
+          <h3 style="text-align: center; margin-bottom: 2rem; color: white;">📝 Book Your Time Slot</h3>
           <form id="booking-form">
             <div class="grid grid-2">
               <div class="form-group">
@@ -306,7 +361,7 @@
     </div>
   </section>
 
-  <!-- Map Section (Optional - Can be replaced with actual map embed) -->
+  <!-- Map Section (Google Maps) -->
   <section class="section" style="background: var(--bg-light);">
     <div class="container">
       <div class="section-title animate-on-scroll">
@@ -314,11 +369,37 @@
         <p>Stop by for a coffee and let's discuss your project in person</p>
       </div>
 
-      <div class="animate-on-scroll" style="background: #e5e7eb; border-radius: 12px; height: 400px; display: flex; align-items: center; justify-content: center; color: var(--text-gray);">
-        <div style="text-align: center;">
-          <p style="font-size: 1.25rem; margin-bottom: 0.5rem;">📍 Our Location</p>
-          <p>Kurdistan, Iraq</p>
-          <p style="margin-top: 1rem; font-size: 0.875rem;">Map integration can be added here<br>(Google Maps, Mapbox, etc.)</p>
+      <div class="animate-on-scroll">
+        <!--
+          GOOGLE MAPS INTEGRATION INSTRUCTIONS:
+
+          1. Go to Google Maps (maps.google.com)
+          2. Search for your office location in Switzerland
+          3. Click "Share" > "Embed a map"
+          4. Copy the iframe code
+          5. Replace the placeholder iframe below with your embed code
+
+          Example:
+          <iframe src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE"
+                  width="100%" height="400" style="border:0; border-radius: 12px;"
+                  allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+        -->
+
+        <!-- Placeholder Map -->
+        <div style="background: rgba(26, 26, 26, 0.6); backdrop-filter: blur(30px); border-radius: 12px; height: 400px; display: flex; align-items: center; justify-content: center; color: var(--text-gray); border: 1px solid rgba(255, 255, 255, 0.1);">
+          <div style="text-align: center;">
+            <p style="font-size: 3rem; margin-bottom: 1rem;">🇨🇭</p>
+            <p style="font-size: 1.25rem; margin-bottom: 0.5rem; color: white;">📍 Our Location</p>
+            <p style="color: var(--medium-gray);">Switzerland</p>
+            <p style="margin-top: 1.5rem; font-size: 0.875rem; color: var(--medium-gray);">
+              Add your Google Maps embed code above<br>
+              to show your exact location in Switzerland
+            </p>
+            <a href="https://www.google.com/maps/search/Switzerland" target="_blank" class="btn btn-secondary" style="margin-top: 1.5rem;">
+              View on Google Maps
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -375,9 +456,9 @@
 
         <div class="footer-section">
           <h3>Contact</h3>
-          <p>📧 contact@jaffstudio.com</p>
-          <p>📱 +964 XXX XXX XXXX</p>
-          <p>📍 Kurdistan, Iraq</p>
+          <p>📧 contact@jaffstudio.ch</p>
+          <p>📱 +41 XX XXX XX XX</p>
+          <p>📍 Switzerland</p>
         </div>
       </div>
 
@@ -401,6 +482,7 @@
     </div>
   </div>
 
+  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
   <script>
     // Set minimum date for booking to today
@@ -410,7 +492,140 @@
         const today = new Date().toISOString().split('T')[0];
         dateInput.setAttribute('min', today);
       }
+
+      // Initialize Calendar Widget
+      initializeCalendar();
     });
+
+    // Simple Calendar Widget
+    function initializeCalendar() {
+      const calendarWidget = document.getElementById('calendar-widget');
+      if (!calendarWidget) return;
+
+      const today = new Date();
+      const currentMonth = today.getMonth();
+      const currentYear = today.getFullYear();
+
+      // Calendar Header
+      const monthNames = ["January", "February", "March", "April", "May", "June",
+                          "July", "August", "September", "October", "November", "December"];
+
+      const calendarHTML = `
+        <div class="calendar-header">
+          <button class="calendar-nav" onclick="changeMonth(-1)">‹</button>
+          <h4 class="calendar-month">${monthNames[currentMonth]} ${currentYear}</h4>
+          <button class="calendar-nav" onclick="changeMonth(1)">›</button>
+        </div>
+        <div class="calendar-days">
+          <div class="calendar-day-header">Mon</div>
+          <div class="calendar-day-header">Tue</div>
+          <div class="calendar-day-header">Wed</div>
+          <div class="calendar-day-header">Thu</div>
+          <div class="calendar-day-header">Fri</div>
+          <div class="calendar-day-header">Sat</div>
+          <div class="calendar-day-header">Sun</div>
+        </div>
+        <div class="calendar-dates" id="calendar-dates"></div>
+        <div class="calendar-legend">
+          <div><span class="legend-dot available"></span> Available</div>
+          <div><span class="legend-dot busy"></span> Busy</div>
+          <div><span class="legend-dot selected"></span> Selected</div>
+        </div>
+      `;
+
+      calendarWidget.innerHTML = calendarHTML;
+      renderCalendarDates(currentMonth, currentYear);
+    }
+
+    let currentCalendarMonth = new Date().getMonth();
+    let currentCalendarYear = new Date().getFullYear();
+
+    function changeMonth(delta) {
+      currentCalendarMonth += delta;
+      if (currentCalendarMonth > 11) {
+        currentCalendarMonth = 0;
+        currentCalendarYear++;
+      } else if (currentCalendarMonth < 0) {
+        currentCalendarMonth = 11;
+        currentCalendarYear--;
+      }
+
+      const monthNames = ["January", "February", "March", "April", "May", "June",
+                          "July", "August", "September", "October", "November", "December"];
+      document.querySelector('.calendar-month').textContent = `${monthNames[currentCalendarMonth]} ${currentCalendarYear}`;
+      renderCalendarDates(currentCalendarMonth, currentCalendarYear);
+    }
+
+    function renderCalendarDates(month, year) {
+      const datesContainer = document.getElementById('calendar-dates');
+      if (!datesContainer) return;
+
+      const firstDay = new Date(year, month, 1);
+      const lastDay = new Date(year, month + 1, 0);
+      const prevLastDay = new Date(year, month, 0);
+
+      const firstDayIndex = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1;
+      const lastDateNum = lastDay.getDate();
+      const prevLastDateNum = prevLastDay.getDate();
+
+      let datesHTML = '';
+
+      // Previous month dates
+      for (let i = firstDayIndex; i > 0; i--) {
+        datesHTML += `<div class="calendar-date prev-month">${prevLastDateNum - i + 1}</div>`;
+      }
+
+      // Current month dates
+      const today = new Date();
+      for (let i = 1; i <= lastDateNum; i++) {
+        const date = new Date(year, month, i);
+        const isPast = date < today.setHours(0,0,0,0);
+        const isToday = date.toDateString() === new Date().toDateString();
+        const isWeekend = date.getDay() === 0 || date.getDay() === 6;
+
+        // Simulate availability (randomly mark some dates as busy for demo)
+        const isBusy = isWeekend || Math.random() > 0.7;
+        const availability = isPast ? 'past' : (isBusy ? 'busy' : 'available');
+
+        datesHTML += `
+          <div class="calendar-date ${availability} ${isToday ? 'today' : ''}"
+               onclick="${!isPast && !isBusy ? `selectDate(${i}, ${month}, ${year})` : ''}"
+               ${!isPast && !isBusy ? 'style="cursor: pointer;"' : ''}>
+            ${i}
+          </div>
+        `;
+      }
+
+      // Next month dates
+      const totalCells = datesHTML.match(/calendar-date/g).length;
+      const remainingCells = 42 - totalCells; // 6 rows × 7 days
+      for (let i = 1; i <= remainingCells; i++) {
+        datesHTML += `<div class="calendar-date next-month">${i}</div>`;
+      }
+
+      datesContainer.innerHTML = datesHTML;
+    }
+
+    function selectDate(day, month, year) {
+      // Remove previous selection
+      document.querySelectorAll('.calendar-date').forEach(el => el.classList.remove('selected'));
+
+      // Add selection to clicked date
+      event.target.classList.add('selected');
+
+      // Update booking form date input
+      const dateInput = document.getElementById('booking-date');
+      if (dateInput) {
+        const monthStr = String(month + 1).padStart(2, '0');
+        const dayStr = String(day).padStart(2, '0');
+        dateInput.value = `${year}-${monthStr}-${dayStr}`;
+      }
+
+      // Show notification
+      if (typeof showNotification === 'function') {
+        showNotification(`Selected ${day}/${month + 1}/${year}. Please complete the booking form below.`, 'success');
+      }
+    }
   </script>
 </body>
 </html>
