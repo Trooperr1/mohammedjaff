@@ -1,3 +1,23 @@
+// ===== Language Switching =====
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize language on page load
+  updatePageLanguage();
+
+  // Language switcher buttons
+  const langButtons = document.querySelectorAll('.lang-btn');
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.getAttribute('data-lang');
+      setCurrentLanguage(lang);
+      updatePageLanguage();
+
+      // Show notification
+      const langNames = { en: 'English', fr: 'Français', de: 'Deutsch' };
+      showNotification(`Language changed to ${langNames[lang]}`, 'success');
+    });
+  });
+});
+
 // ===== Navigation Toggle =====
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
@@ -255,7 +275,7 @@ if (chatbotToggle) {
       chatbotInput.focus();
       // Send welcome message if it's the first time
       if (chatbotMessages && chatbotMessages.children.length === 0) {
-        addChatMessage('bot', 'Hello! 👋 Welcome to JAFF STUDIO. How can I help you today?');
+        addChatMessage('bot', t('chatbot_welcome'));
       }
     }
   });

@@ -262,6 +262,44 @@ p {
   z-index: 1;
 }
 
+/* Language Switcher - Modern Style */
+.language-switcher {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lang-btn {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: var(--off-white);
+  border: none;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+
+.lang-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--pure-white);
+  transform: translateY(-2px);
+}
+
+.lang-btn.active {
+  background: var(--pure-white);
+  color: var(--matt-black);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
